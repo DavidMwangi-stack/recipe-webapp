@@ -75,3 +75,38 @@ h1{
     background: #0b3266;
 }
 
+@media screen and (max-width: 768px){
+
+    .container{
+        max-width: 90%;
+    }
+
+    .recipe-item{
+        /* flex-wrap: wrap;
+         */
+         flex-direction: column;
+    }
+
+    .recipe-item img{
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .recipe-item h2{
+        font-size: 20px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .recipe-item p{
+        font-size: 14px;
+        margin-bottom: 10px;
+
+    }
+
+    .recipe-item a{
+        width: 100%;
+        text-align: center;
+    }
+}
