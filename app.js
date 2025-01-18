@@ -1,7 +1,9 @@
-const API_KEY = "YOUR KEY HERE";
+const API_KEY = "YOUR API KEY HERE"
 const recipeListEl = document.getElementById("recipe-list");
 
+// input is recipes
 function displayRecipes(recipes){
+    // -creating an empty string to clear the browser
         recipeListEl.innerHTML = "";
         recipes.forEach((recipe) => {
             const recipeItemEl = document.createElement("li")
@@ -16,8 +18,13 @@ function displayRecipes(recipes){
             recipeIngredientsEl  = document.createElement("p")
             recipeIngredientsEl.innerHTML = `<strong> Ingredients:</strong> ${recipe.extendedIngredients.map((ingredient) => ingredient.original).join(", ")}`;
 
+            recipeLinkEl = document.createElement("a");
+            recipeLinkEl.href = recipe.sourceUrl;
+            recipeLinkEl.innerText = "View Recipe";
+
 
             recipeItemEl.appendChild(recipeImageEl);
+            recipeItemEl.appendChild(recipeLinkEl);
             recipeItemEl.appendChild(recipeTitleEl);
             recipeItemEl.appendChild(recipeIngredientsEl);
             recipeListEl.appendChild(recipeItemEl);
@@ -25,6 +32,7 @@ function displayRecipes(recipes){
 }
 
 async function getRecipes() {
+    // get random recipes from the variable api
     const response = await fetch(`https://api.spoonacular.com/recipes/random?number=10&apiKey=${API_KEY}`)
 
     const data = await response.json()
@@ -37,7 +45,8 @@ async function getRecipes() {
 async function init(){
     const recipes = await getRecipes()
     // console.log(recipes);
-    
+
+    // function to display recipes
     displayRecipes(recipes)
 }
 
