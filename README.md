@@ -1,7 +1,7 @@
 User-friendly interface with intuitive navigation.
 Responsive design for optimal viewing on all devices (desktops, tablets, and mobile phones).
-Robust searches
-Integration with social media platforms for easy sharing on a later time.
+Robust searches and key details in the links provided.
+Integration with social media platforms for easy sharing to be set on a later time.
 
 Technologies Used:
 
